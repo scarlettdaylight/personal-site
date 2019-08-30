@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
+import { height } from 'styled-system';
 
 const StyledImg = styled.img`
   position: absolute;
@@ -10,6 +11,7 @@ const StyledImg = styled.img`
   height: 100%;
   object-fit: cover;
   object-position: center center;
+  ${height}
 `;
 
 const Image = ({ imageInfo, imageStyle = {}, ...rest }) => {

@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import Paragraph from './Atoms/Paragraph';
 
 const StyledNavbar = styled.nav`
   height: 4rem;
   margin: 16px;
-`
+  text-transform: uppercase;
+`;
 
 const Navbar = () => (
   <StyledNavbar className="navbar" role="navigation" aria-label="main navigation">
@@ -23,10 +25,14 @@ const Navbar = () => (
     <div id="main-navbar" className="navbar-menu">
       <div className="navbar-end">
         <a className="navbar-item">
+          <Paragraph pb={0} fontSize={1}>
           About
+          </Paragraph>
         </a>
         <a className="navbar-item">
+          <Paragraph pb={0} fontSize={1}>
           Contact
+          </Paragraph>
         </a>
       </div>
     </div>

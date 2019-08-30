@@ -1,6 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
-import { space } from 'styled-system';
 import { FormattedHTMLMessage } from 'react-intl';
 import Section from './Atoms/Section';
 import theme from '../assets/styles/theme';

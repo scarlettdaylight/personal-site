@@ -19,6 +19,9 @@ const HeroSection = styled(Section)`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  .headline {
+    font-family: 'Oxygen', sans-serif;
+  }
 `;
 
 
@@ -29,13 +32,13 @@ const Hero = ({
     <Row px={[6, 6, 8]} pt={[7, 7, 8]} pb={[5, 5, 6]}>
       <Column>
         <Box>
-          <Heading fontSize={[2, 2, 3]} pb={[1]} as="h1" color={theme.color.red}>
+          <Heading fontSize={[2, 2, 3]} pb={[1]} as="h1">
             {name}
           </Heading>
           <Paragraph fontSize={[1, 1, 2]} color={theme.color.greyish}>
             {title}
           </Paragraph>
-          <Paragraph fontSize={[6, 6, 7]}>
+          <Paragraph fontSize={[6, 6, 7]} className={'headline'}>
             {desc}
           </Paragraph>
           <hr />

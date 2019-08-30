@@ -14,6 +14,7 @@ const Experience = ({ desc }) => {
 
   return (
     <Section p={0}>
+      <hr />
       <Row px={[6, 6, 8]} py={[6, 6, 7]} multi>
         <Column col="12">
           <Heading as="h2" fontSize={[5, 5, 6]}>
@@ -24,7 +25,7 @@ const Experience = ({ desc }) => {
           </Paragraph>
         </Column>
         {works && works.map(work => (
-          <Column pr={4}>
+          <Column pr={4} >
             <Heading fontSize={[3, 3, 4]} pb={[2]} as="h3" color={theme.color.gray}>
               {work.company}
             </Heading>

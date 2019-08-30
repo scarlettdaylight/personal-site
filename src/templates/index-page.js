@@ -5,6 +5,7 @@ import SEO from '../components/SEO';
 import Hero from '../components/Hero';
 import Contact from '../components/Contact';
 import Experience from '../components/Experience';
+import Projects from '../components/Projects';
 
 const IndexPage = ({ data }) => {
   const { hero, experience } = data.markdownRemark.frontmatter;
@@ -12,6 +13,7 @@ const IndexPage = ({ data }) => {
     <div>
       <SEO title="Home" />
       <Hero {...hero} />
+      <Projects />
       <Experience {...experience} />
       <Contact />
     </div>
