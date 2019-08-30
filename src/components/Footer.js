@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { useSiteMetadata } from '../utilis/hooks';
+import { useSiteMetadata } from '../utilis/staticQuery/useSiteMetadata';
 
 const StyledFooter = styled.footer`
   font-size: 14px;
   text-align: right;
   padding: 16px;
   width: 100%;
-  background: ${props => props.theme.color.gray};
+  background: ${props => props.theme.color.black80};
   color: white;
 `;
 

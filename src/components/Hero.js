@@ -5,14 +5,16 @@ import Paragraph from './Atoms/Paragraph';
 import Heading from './Atoms/Heading';
 import Box from './Atoms/Box';
 import theme from '../assets/styles/theme';
+import Section from './Atoms/Section';
+import Row from './Atoms/Row';
+import Column from './Atoms/Column';
 
-const HeroSection = styled.section`
+const HeroSection = styled(Section)`
   position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  width: 100vw;
   height: 400px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -23,19 +25,23 @@ const HeroSection = styled.section`
 const Hero = ({
   name, title, desc,
 }) => (
-  <HeroSection>
-    <Box px={[7, 7, 8]} pt={[7, 7, 8]} pb={[5, 5, 6]}>
-      <Heading fontSize={[2, 2, 3]} pb={[1]} as="h1" color={theme.color.gray}>
-        {name}
-      </Heading>
-      <Paragraph fontSize={[1, 1, 2]} color={theme.color.greyish}>
-        {title}
-      </Paragraph>
-      <Paragraph fontSize={[6, 6, 7]}>
-        {desc}
-      </Paragraph>
-      <hr />
-    </Box>
+  <HeroSection p={0}>
+    <Row px={[6, 6, 8]} pt={[7, 7, 8]} pb={[5, 5, 6]}>
+      <Column>
+        <Box>
+          <Heading fontSize={[2, 2, 3]} pb={[1]} as="h1" color={theme.color.red}>
+            {name}
+          </Heading>
+          <Paragraph fontSize={[1, 1, 2]} color={theme.color.greyish}>
+            {title}
+          </Paragraph>
+          <Paragraph fontSize={[6, 6, 7]}>
+            {desc}
+          </Paragraph>
+          <hr />
+        </Box>
+      </Column>
+    </Row>
   </HeroSection>
 );
 

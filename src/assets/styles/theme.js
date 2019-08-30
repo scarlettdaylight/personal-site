@@ -5,11 +5,12 @@ const theme = {
   color: {
     red: '#CC0000',
     greyish: '#aaaaaa',
+    lightGray: '#f4f4f4',
     gray: '#2c2c2c',
-    white: 'white',
-    black: '#000000',
-    black44: 'rgba(0,0,0,0.44)',
-    black80: 'rgba(0,0,0,0.8)',
+    white: '#ffffff',
+    black: '#1a1b1f',
+    black44: 'rgba(26,27,31,0.44)',
+    black80: 'rgba(26,27,31,0.8)',
   },
 };
 

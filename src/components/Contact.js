@@ -2,24 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { space } from 'styled-system';
 import { FormattedHTMLMessage } from 'react-intl';
+import Section from './Atoms/Section';
+import theme from '../assets/styles/theme';
 
-const StyledSection = styled.section`
-  max-width: 200px;
-  text-align: center; 
-  margin: auto;
-  ${space}
-  h2 {
-    text-transform: uppercase;
-    font-weight: 700;
-    padding-bottom: 16px;
-  }
-  .address-box {
-    padding-bottom: 16px;
-  }
-`;
 
 const Contact = ({ companyName, address, email }) => (
-  <StyledSection py={[7, 7, 8]}>
+  <Section py={[5, 5, 6]} background={theme.color.lightGray}>
     <div className="columns">
       <div className="column">
         <h2>
@@ -36,7 +24,7 @@ const Contact = ({ companyName, address, email }) => (
         </div>
       </div>
     </div>
-  </StyledSection>
+  </Section>
 );
 
 export default Contact;

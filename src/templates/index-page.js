@@ -4,13 +4,15 @@ import { graphql } from 'gatsby';
 import SEO from '../components/SEO';
 import Hero from '../components/Hero';
 import Contact from '../components/Contact';
+import Experience from '../components/Experience';
 
 const IndexPage = ({ data }) => {
-  const { hero } = data.markdownRemark.frontmatter;
+  const { hero, experience } = data.markdownRemark.frontmatter;
   return (
     <div>
       <SEO title="Home" />
       <Hero {...hero} />
+      <Experience {...experience} />
       <Contact />
     </div>
   );
@@ -30,6 +32,9 @@ export const pageQuery = graphql`
         hero {
           name
           title
+          desc
+        }
+        experience {
           desc
         }
       }

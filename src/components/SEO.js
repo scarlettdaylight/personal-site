@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { useSiteMetadata } from '../utilis/hooks';
+import { useSiteMetadata } from '../utilis/staticQuery/useSiteMetadata';
 import { DEFAULT_LANG } from '../configs/langSetting';
 
 function SEO({

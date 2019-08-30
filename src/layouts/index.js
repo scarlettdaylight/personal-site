@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import theme from '../assets/styles/theme';
 
-import { useSiteMetadata } from '../utilis/hooks';
+import { useSiteMetadata } from '../utilis/staticQuery/useSiteMetadata';
 import { LANG_LIST, DEFAULT_LANG } from '../configs/langSetting';
 
 const getMessages = locale => require(`../lang/${locale}.json`);

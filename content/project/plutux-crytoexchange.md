@@ -1,10 +1,8 @@
 ---
-type: work-experience
+type: project
 order: 3
-companyId: plutux
-company: Plutux Labs
-period: 2018 May - Current
-jobTitle: ['Software Engineer']
+company: plutux
+developmentTime: '~8 months'
 desc: >-
   Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
 ---

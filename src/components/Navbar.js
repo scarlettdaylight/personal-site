@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const StyledNavbar = styled.nav`
   height: 4rem;
+  margin: 16px;
 `
 
 const Navbar = () => (
