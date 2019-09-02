@@ -37,6 +37,7 @@ export const pageQuery = graphql`
           name
           title
           desc
+          typerArr
         }
         experience {
           desc

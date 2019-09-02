@@ -1,6 +1,5 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import Particles from 'react-particles-js';
 import Section from './Atoms/Section';
 import theme from '../assets/styles/theme';
 import Row from './Atoms/Row';
@@ -17,9 +16,6 @@ const Contact = () => {
 
   return (
     <Section id="contact" py={[8, 8, 9]} background={theme.color.lightGray} position="relative">
-      <Box position="absolute" width="100%" bottom={0} left={0} lineHeight={0}>
-        <Wave />
-      </Box>
       <Row>
         <Column>
           <Heading as="h2" textAlign="center" pb={[4, 4, 6]} fontSize={[6, 6, 7]}>
@@ -45,6 +41,9 @@ const Contact = () => {
           </Paragraph>
         </Column>
       </Row>
+      {/*<Box position="absolute" width="100%" bottom={0} left={0} lineHeight={0}>*/}
+      {/*  <Wave />*/}
+      {/*</Box>*/}
     </Section>
   );
 };

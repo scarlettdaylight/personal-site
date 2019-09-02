@@ -20,8 +20,11 @@ export const useProjects = () => {
               weight
               url
               coverImage {
+                coverColor
                 alt
                 image {
+                  publicURL
+                  extension
                   childImageSharp {
                     fluid(maxWidth: 2048, quality: 90) {
                       ...GatsbyImageSharpFluid_noBase64

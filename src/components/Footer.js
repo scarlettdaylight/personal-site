@@ -5,18 +5,17 @@ import { FormattedHTMLMessage } from 'react-intl';
 import { useSiteMetadata } from '../utilis/staticQuery/useSiteMetadata';
 import Paragraph from './Atoms/Paragraph';
 import FlexBox from './Atoms/FlexBox';
-import theme from '../assets/styles/theme';
 
 const StyledFooter = styled.footer`
   font-size: 14px;
   text-align: right;
   padding: 8px 24px;
   width: 100%;
-  background: ${props => props.theme.color.gray};
-  color: ${props => props.theme.color.lightGray};
+  background: ${props => props.theme.color.lightGray};
+  color: ${props => props.theme.color.gray};
   display: flex;
   a {
-    color: ${props => props.theme.color.lightGray};
+    color: ${props => props.theme.color.gray};
   }
 `;
 

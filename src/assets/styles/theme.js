@@ -3,7 +3,8 @@ const theme = {
   breakpoints: ['576px', '768px', '992px', '1200px'],
   fontSizes: [12, 14, 16, 18, 24, 28, 32, 48, 64, 72],
   color: {
-    red: '#CC0000',
+    pink: '#CB356B',
+    red: '#BD3F32',
     greyish: '#aaaaaa',
     lightGray: '#f4f4f4',
     gray: '#2c2c2c',

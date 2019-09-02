@@ -3,7 +3,7 @@ templateKey: project-page
 name: Virtual Labs on Frontiers in Biochemistry
 order: 5
 url: 'https://www.cuhk.edu.hk/culive/vlab_2018/'
-company: cuhk
+company: CUHK
 developmentTime: '~2 months'
 coverImage:
     alt: Virtual Labs on Frontiers in Biochemistry

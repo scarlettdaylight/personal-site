@@ -3,11 +3,12 @@ templateKey: index-page
 title: Home
 heading: Scarlett
 subheading: Scarlett
-description: Hello there! I'm a frontend developer and I love to build and develop beautiful stuff.
+description: Hello there! I'm a frontend developer and I love to build beautiful stuff.
 hero:
   name: Scarlett Hui
   title: Software Engineer
-  desc: Hello there! I'm a frontend developer and I love to build beautiful stuff.
+  desc: Hello there! I'm a frontend developer and I love to
+  typerArr: ['build beautiful stuff.', 'learn new technique.', 'meet new friends.', 'drink black coffee.']
 experience:
   desc: >-
     Having four years experience with two years as Frontend Developer, there are still much for me to learn! 
