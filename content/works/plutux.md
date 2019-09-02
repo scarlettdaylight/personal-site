@@ -3,8 +3,11 @@ type: work-experience
 order: 3
 companyId: plutux
 company: Plutux Labs
-period: 2018 May - Current
+period: Jun 2018 - Present
 jobTitle: ['Software Engineer']
 desc: >-
-  Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
+  Startup environment is a fresh new adventure for me ;) 
+  
+  As the sole web developer alongside my senior in here, it is definitely a new and huge challenge to develop a cryto-exchange platform.
+     
 ---

@@ -10,13 +10,13 @@ import Projects from '../components/Projects';
 const IndexPage = ({ data }) => {
   const { hero, experience } = data.markdownRemark.frontmatter;
   return (
-    <div>
-      <SEO title="Home" />
+    <>
+      <SEO pageTitle="Home" />
       <Hero {...hero} />
       <Projects />
       <Experience {...experience} />
       <Contact />
-    </div>
+    </>
   );
 };
 

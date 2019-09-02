@@ -4,7 +4,7 @@ export const useProjects = () => {
   const { allMarkdownRemark } = useStaticQuery(graphql`
     query PROJECT_QUERY {
       allMarkdownRemark(
-        filter: {frontmatter: {type: {eq: "project"}}},
+        filter: {frontmatter: {templateKey: {eq: "project-page"}}},
         sort: {fields: frontmatter___order, order: DESC}
       ) {
         edges {

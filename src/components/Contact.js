@@ -2,12 +2,13 @@ import React from 'react';
 import { FormattedHTMLMessage } from 'react-intl';
 import Section from './Atoms/Section';
 import theme from '../assets/styles/theme';
-
+import Row from './Atoms/Row';
+import Column from './Atoms/Column';
 
 const Contact = ({ companyName, address, email }) => (
   <Section py={[5, 5, 6]} background={theme.color.lightGray}>
-    <div className="columns">
-      <div className="column">
+    <Row>
+      <Column>
         <h2>
           <FormattedHTMLMessage id="contact.title" defaultMessage="Contact" />
         </h2>
@@ -20,8 +21,8 @@ const Contact = ({ companyName, address, email }) => (
         <div>
           {email}
         </div>
-      </div>
-    </div>
+      </Column>
+    </Row>
   </Section>
 );
 

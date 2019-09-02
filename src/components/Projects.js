@@ -27,11 +27,11 @@ const ProjectItem = ({
   name, company, coverImage, techStack,
 }) => (
   <Box>
-    <ImageBox>
-      <Image imageInfo={coverImage} imageStyle={{ height: '400px' }} />
+    <ImageBox height={[300, 300, 300, 400]} backgroundColor={theme.color.greyish}>
+      <Image imageInfo={coverImage} imageStyle={{ height: '100%' }} />
     </ImageBox>
     <Box py={3} px={3} textAlign="center">
-      <Paragraph color={theme.color.greyish} pb={[1, 1, 2]} fontSize={[1]}>
+      <Paragraph color={theme.color.greyish} pb={[1, 1, 2]} fontSize={[1]} style={{ textTransform: 'capitalize' }}>
         {company}
       </Paragraph>
       <Heading as="h4" fontSize={[3, 3, 4]}>
@@ -40,7 +40,7 @@ const ProjectItem = ({
       <Box>
         <Paragraph fontSize={[1]} color={theme.color.greyish}>
           {techStack && techStack.map(tech => (
-            <Box as="span" mx={2} >
+            <Box as="span" mx={2}>
               {tech}
             </Box>
           ))}

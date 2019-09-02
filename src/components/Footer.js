@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { FormattedHTMLMessage } from 'react-intl';
 import { useSiteMetadata } from '../utilis/staticQuery/useSiteMetadata';
 import Paragraph from './Atoms/Paragraph';
 import FlexBox from './Atoms/FlexBox';
+import theme from '../assets/styles/theme';
 
 const StyledFooter = styled.footer`
   font-size: 14px;
@@ -25,8 +27,11 @@ const Footer = () => {
         </Paragraph>
       </FlexBox>
       <FlexBox ml="auto">
-        <Paragraph>
-          LINKEDIN
+        <Paragraph fontSize={1} color={theme.color.greyish} mr={3}>
+          <FormattedHTMLMessage id="footer.github" defaultMessage="GITHUB" />
+        </Paragraph>
+        <Paragraph fontSize={1} color={theme.color.greyish}>
+          <FormattedHTMLMessage id="footer.linkedIn" defaultMessage="LINKEDIN" />
         </Paragraph>
       </FlexBox>
     </StyledFooter>

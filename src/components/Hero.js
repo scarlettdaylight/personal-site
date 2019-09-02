@@ -15,10 +15,13 @@ const HeroSection = styled(Section)`
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  height: 400px;
+  //height: 400px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  .name {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
   .headline {
     font-family: 'Oxygen', sans-serif;
   }
@@ -28,17 +31,17 @@ const HeroSection = styled(Section)`
 const Hero = ({
   name, title, desc,
 }) => (
-  <HeroSection p={0}>
-    <Row px={[6, 6, 8]} pt={[7, 7, 8]} pb={[5, 5, 6]}>
+  <HeroSection px={[6, 6, 8]} pt={[7, 7, 8]} pb={[0, 0, 2]}>
+    <Row>
       <Column>
         <Box>
-          <Heading fontSize={[2, 2, 3]} pb={[1]} as="h1">
+          <Heading fontSize={[2, 2, 3]} pb={[1]} as="h1" className="name">
             {name}
           </Heading>
           <Paragraph fontSize={[1, 1, 2]} color={theme.color.greyish}>
             {title}
           </Paragraph>
-          <Paragraph fontSize={[6, 6, 7]} className={'headline'}>
+          <Paragraph fontSize={[6, 6, 7]} className="headline">
             {desc}
           </Paragraph>
           <hr />

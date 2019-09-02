@@ -10,6 +10,7 @@ import {
   width,
   lineHeight,
   display,
+  fontFamily,
   compose,
 } from 'styled-system';
 
@@ -37,6 +38,7 @@ export const Headline = styled.h1`
     borderBottom,
     lineHeight,
     display,
+    fontFamily,
   )}
 `;
 

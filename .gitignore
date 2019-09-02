@@ -92,3 +92,5 @@ typings/
 .idea
 
 public
+
+.DS_Store

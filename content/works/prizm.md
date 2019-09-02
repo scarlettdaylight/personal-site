@@ -2,9 +2,13 @@
 type: work-experience
 order: 1
 companyId: prizm
-company: Prizm Group
-period: 2015 Jun - 2017 May
+company: PRIZM Group Hong Kong
+period: May 2015 - Dec 2017
 jobTitle: ['Software Engineer', 'Analyst Programmer']
 desc: >-
-  Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
+  In Prizm I was responsible for developing various kinds of campaigns for our clients. 
+  
+  I am very grateful that I could have the chance to try different kinds of technologies as we have the freedom to do so.
+  
+  After around one year I was promoted to Analyst Programmer and was assigned to payment team and develop internal CRM with my colleagues.
 ---
