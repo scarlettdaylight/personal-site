@@ -8,14 +8,16 @@ import Experience from '../components/Experience';
 import Projects from '../components/Projects';
 
 const IndexPage = ({ data }) => {
-  const { hero, experience } = data.markdownRemark.frontmatter;
+  const {
+    hero, experience, email, linkedIn,
+  } = data.markdownRemark.frontmatter;
   return (
     <>
       <SEO pageTitle="Home" />
       <Hero {...hero} />
       <Projects />
       <Experience {...experience} />
-      <Contact />
+      <Contact email={email} linkedIn={linkedIn} />
     </>
   );
 };

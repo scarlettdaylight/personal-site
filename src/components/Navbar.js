@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Paragraph from './Atoms/Paragraph';
+import { FormattedMessage } from 'react-intl';
+import Heading from './Atoms/Heading';
 
 const StyledNavbar = styled.nav`
   height: 4rem;
@@ -26,12 +28,7 @@ const Navbar = () => (
       <div className="navbar-end">
         <a className="navbar-item">
           <Paragraph pb={0} fontSize={1}>
-          About
-          </Paragraph>
-        </a>
-        <a className="navbar-item">
-          <Paragraph pb={0} fontSize={1}>
-          Contact
+            <FormattedMessage id="navbar.contact" defaultMessage="Contact" />
           </Paragraph>
         </a>
       </div>

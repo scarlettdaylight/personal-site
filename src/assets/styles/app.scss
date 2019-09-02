@@ -52,3 +52,11 @@ hr {
   //background: $red;
   //opacity: 0.4;
 }
+
+a {
+  color: $gray;
+  &:hover {
+    color: $red;
+    text-decoration: underline;
+  }
+}

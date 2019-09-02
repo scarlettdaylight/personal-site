@@ -8,7 +8,6 @@ import Box from './Atoms/Box';
 import Heading from './Atoms/Heading';
 import Paragraph from './Atoms/Paragraph';
 import Image from './Atoms/Image';
-import FlexBox from './Atoms/FlexBox';
 import { useProjects } from '../utilis/staticQuery/useProjects';
 import theme from '../assets/styles/theme';
 
@@ -23,13 +22,24 @@ const ImageBox = styled(Box)`
   }
 `;
 
+const ProjectImage = ({ coverImage }) => (
+  <ImageBox height={[300, 300, 300, 400]} backgroundColor={theme.color.greyish}>
+    <Image imageInfo={coverImage} imageStyle={{ height: '100%' }} />
+  </ImageBox>
+);
+
 const ProjectItem = ({
-  name, company, coverImage, techStack,
+  name, company, coverImage, techStack, url,
 }) => (
   <Box>
-    <ImageBox height={[300, 300, 300, 400]} backgroundColor={theme.color.greyish}>
-      <Image imageInfo={coverImage} imageStyle={{ height: '100%' }} />
-    </ImageBox>
+    {url !== '' && (
+    <a target="_blank" rel="noopener noreferrer" href={url}>
+      <ProjectImage coverImage={coverImage} />
+    </a>
+    )}
+    {url === '' && (
+      <ProjectImage coverImage={coverImage} />
+    )}
     <Box py={3} px={3} textAlign="center">
       <Paragraph color={theme.color.greyish} pb={[1, 1, 2]} fontSize={[1]} style={{ textTransform: 'capitalize' }}>
         {company}
@@ -53,7 +63,7 @@ const ProjectItem = ({
 const ProjectRow = ({ projectArr }) => (
   <Row>
     {projectArr && projectArr.map((project, i) => (
-      <Column>
+      <Column col={project.weight || null}>
         <ProjectItem {...project} />
       </Column>
     ))}

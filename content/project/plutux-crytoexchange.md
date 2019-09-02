@@ -3,6 +3,7 @@ templateKey: project-page
 name: Plutux Cryto-Exchange Platform
 url: 'https://app.plutux.com'
 order: 8
+weight: 7
 company: plutux
 developmentTime: '~9 months'
 coverImage:

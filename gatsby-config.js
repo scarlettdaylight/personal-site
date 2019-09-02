@@ -3,6 +3,9 @@ module.exports = {
     title: 'Scarlett',
     description: '',
     author: 'Scarlett Hui',
+    email: 'scarletthui225@gmail.com',
+    gitlab: 'scarletthui225',
+    linkedIn: 'https://www.linkedin.com/in/scarletthui',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -34,6 +37,14 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
         name: 'images',
       },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: `${__dirname}/src/assets/icons` // See below to configure properly
+        }
+      }
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',

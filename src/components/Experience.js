@@ -29,7 +29,7 @@ const Experience = ({ desc }) => {
           const descArr = work.desc.split('\n');
 
           return (
-            <Column pr={4} col={12} className="is-4-desktop">
+            <Column pr={4} col={12}>
               <Heading fontSize={[3, 3, 4]} pb={[1]} as="h3" color={theme.color.gray}>
                 {work.company}
               </Heading>
@@ -51,7 +51,7 @@ const Experience = ({ desc }) => {
             </Column>
           );
         })}
-        <hr />
+        {/* <hr /> */}
       </Row>
     </Section>
   );

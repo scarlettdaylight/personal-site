@@ -17,6 +17,8 @@ export const useProjects = () => {
               developmentTime
               desc
               techStack
+              weight
+              url
               coverImage {
                 alt
                 image {

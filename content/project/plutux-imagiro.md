@@ -2,7 +2,7 @@
 templateKey: project-page
 name: Imagiro Concept
 url: 'https://imagiroconcepts.com'
-order: 7
+order: 6
 company: plutux
 developmentTime: '~2 months'
 coverImage:

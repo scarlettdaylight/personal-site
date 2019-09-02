@@ -2,7 +2,7 @@
 templateKey: project-page
 name: Plutux
 url: 'https://www.plutux.com'
-order: 6
+order: 7
 company: plutux
 developmentTime: '~1 months'
 coverImage:

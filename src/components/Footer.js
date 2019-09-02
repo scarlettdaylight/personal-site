@@ -12,8 +12,12 @@ const StyledFooter = styled.footer`
   text-align: right;
   padding: 8px 24px;
   width: 100%;
-  background: ${props => props.theme.color.lightGray};
+  background: ${props => props.theme.color.gray};
+  color: ${props => props.theme.color.lightGray};
   display: flex;
+  a {
+    color: ${props => props.theme.color.lightGray};
+  }
 `;
 
 const Footer = () => {
@@ -27,12 +31,16 @@ const Footer = () => {
         </Paragraph>
       </FlexBox>
       <FlexBox ml="auto">
-        <Paragraph fontSize={1} color={theme.color.greyish} mr={3}>
-          <FormattedHTMLMessage id="footer.github" defaultMessage="GITHUB" />
-        </Paragraph>
-        <Paragraph fontSize={1} color={theme.color.greyish}>
-          <FormattedHTMLMessage id="footer.linkedIn" defaultMessage="LINKEDIN" />
-        </Paragraph>
+        <a target="_blank" rel="noopener noreferrer" href={meta.gitlab}>
+          <Paragraph fontSize={1} mr={3}>
+            <FormattedHTMLMessage id="footer.gitlab" defaultMessage="GITLAB" />
+          </Paragraph>
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href={meta.linkedIn}>
+          <Paragraph fontSize={1}>
+            <FormattedHTMLMessage id="footer.linkedIn" defaultMessage="LINKEDIN" />
+          </Paragraph>
+        </a>
       </FlexBox>
     </StyledFooter>
   );
