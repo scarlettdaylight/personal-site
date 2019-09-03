@@ -1,69 +1,35 @@
 import React from 'react';
-import styled from 'styled-components';
 import chunk from 'lodash/chunk';
-import get from 'lodash/get';
+import Reveal from 'react-reveal/Reveal';
+import styled from 'styled-components';
+
 import Section from './Atoms/Section';
 import Row from './Atoms/Row';
 import Column from './Atoms/Column';
 import Box from './Atoms/Box';
 import Heading from './Atoms/Heading';
 import Paragraph from './Atoms/Paragraph';
-import Image from './Atoms/Image';
 import { useProjects } from '../utilis/staticQuery/useProjects';
 import theme from '../assets/styles/theme';
+import ProjectImageSelector from './ProjectImageSelector';
 
-const ImageBox = styled(Box)`
-  //filter: grayscale(70%);
-  border-radius: 4px;
-  transition: filter 300ms ease-in-out;
-  overflow: hidden;
+const ProjectItemWrapper = styled(Box)`
+  transition: transform 160ms cubic-bezier(.17,.67,.83,.67);
   &:hover {
-    filter: opacity(80%);
-    cursor: pointer;
-    //filter: none;
+    transform: translate3d(-8px, -8px, 8px)
   }
 `;
-
-const ProjectImage = ({ coverImage }) => (
-  <ImageBox
-    height={[300, 300, 300, 400]}
-    backgroundColor={coverImage.coverColor || theme.color.greyish}
-    display={get(coverImage, 'image.extension', '') === 'svg' ? 'flex' : 'block'}
-  >
-    <Image
-      imageInfo={coverImage}
-      imageStyle={{
-        margin: 'auto',
-        height: get(coverImage, 'image.extension', '') === 'svg' ? 'auto' : '100%',
-        display: 'block',
-        width: get(coverImage, 'image.extension', '') === 'svg' ? '30%' : 'auto',
-      }}
-    />
-  </ImageBox>
-);
 
 const ProjectItem = ({
   name, company, coverImage, techStack, url,
 }) => (
-  <Box>
-    {url !== '' && (
-      <a target="_blank" rel="noopener noreferrer" href={url}>
-        <ProjectImage coverImage={coverImage} />
-      </a>
-    )}
-    {url === '' && (
-      <ProjectImage coverImage={coverImage} />
-    )}
-    <Box className="see-more-cover">
-      <Paragraph color={theme.color.white}>
-        {/* <FormattedHTMLMessage id="project.seeMore" defaultMessage="See More" /> */}
-      </Paragraph>
-    </Box>
+  <ProjectItemWrapper>
+    <ProjectImageSelector coverImage={coverImage} url={url} />
     <Box py={3} px={3} textAlign="center">
-      <Paragraph color={theme.color.greyish} pb={[1, 1, 2]} fontSize={[1]} style={{ textTransform: 'capitalize' }}>
+      <Paragraph color={theme.color.greyish} pb={[2]} fontSize={[1]} style={{ textTransform: 'capitalize' }}>
         {company}
       </Paragraph>
-      <Heading as="h4" fontSize={[3, 3, 4]}>
+      <Heading as="h4" fontSize={[3, 3, 4]} pb={[3, 3]}>
         {name}
       </Heading>
       <Box>
@@ -76,14 +42,16 @@ const ProjectItem = ({
         </Paragraph>
       </Box>
     </Box>
-  </Box>
+  </ProjectItemWrapper>
 );
 
 const ProjectRow = ({ projectArr }) => (
   <Row>
     {projectArr && projectArr.map((project, i) => (
       <Column col={project.weight || null}>
-        <ProjectItem {...project} />
+        <Reveal effect={i === 0 ? 'item-from-left' : 'item-from-right'}>
+          <ProjectItem {...project} />
+        </Reveal>
       </Column>
     ))}
   </Row>

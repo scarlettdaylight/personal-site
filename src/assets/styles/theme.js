@@ -11,6 +11,7 @@ const theme = {
     white: '#ffffff',
     black: '#1a1b1f',
     black44: 'rgba(26,27,31,0.44)',
+    black70: 'rgba(26,27,31,0.7)',
     black80: 'rgba(26,27,31,0.8)',
   },
 };

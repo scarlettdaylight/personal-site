@@ -7,7 +7,7 @@ description: Hello there! I'm a frontend developer and I love to build beautiful
 hero:
   name: Scarlett Hui
   title: Software Engineer
-  desc: Hello there! I'm a frontend developer and I love to
+  desc: Hello there! I'm a frontend developer and I love to...
   typerArr: ['build beautiful stuff.', 'learn new technique.', 'meet new friends.', 'drink black coffee.']
 experience:
   desc: >-

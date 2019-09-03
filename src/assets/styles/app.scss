@@ -42,6 +42,7 @@ $column-gap: 16px;
 @import '../../../node_modules/bulma/sass/layout/footer';
 
 html {
+  overflow-x: hidden;
   overflow-y: auto;
 }
 
@@ -56,8 +57,51 @@ hr {
 }
 
 a {
+  transition: color 150ms ease-in;
   color: $gray;
   &:hover {
     color: $red;
   }
+}
+
+//navbar
+a.navbar-item, .navbar-burger {
+  letter-spacing: 1px;
+  transition: color 200ms ease-in;
+  &:hover{
+    background-color: transparent;
+    color: $red;
+  }
+}
+
+@keyframes item-from-left {
+  0% {
+    opacity: 0;
+    transform: translate3d(-20%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.item-from-left {
+  animation-name: item-from-left;
+}
+
+@keyframes item-from-right {
+  0% {
+    opacity: 0;
+    transform: translate3d(20%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.item-from-right {
+  animation-name: item-from-right;
 }

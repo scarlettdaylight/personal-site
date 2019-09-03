@@ -4,6 +4,7 @@ order: 1
 companyId: prizm
 company: PRIZM Group Hong Kong
 period: May 2015 - Dec 2017
+companyColor: '#6e50a1'
 jobTitle: ['Software Engineer', 'Analyst Programmer']
 desc: >-
   In Prizm I was responsible for developing various kinds of campaigns for our clients. 

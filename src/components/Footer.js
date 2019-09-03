@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { FormattedHTMLMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { useSiteMetadata } from '../utilis/staticQuery/useSiteMetadata';
 import Paragraph from './Atoms/Paragraph';
 import FlexBox from './Atoms/FlexBox';
+import theme from '../assets/styles/theme';
 
 const StyledFooter = styled.footer`
   font-size: 14px;
@@ -25,19 +26,14 @@ const Footer = () => {
   return (
     <StyledFooter>
       <FlexBox>
-        <Paragraph fontSize={1}>
-      © {new Date().getFullYear()}, {meta.author}
+        <Paragraph fontSize={1} color={theme.color.black70}>
+      Made with ♥ and coffee by {meta.author} © {new Date().getFullYear()}
         </Paragraph>
       </FlexBox>
       <FlexBox ml="auto">
         <a target="_blank" rel="noopener noreferrer" href={meta.gitlab}>
-          <Paragraph fontSize={1} mr={3}>
-            <FormattedHTMLMessage id="footer.gitlab" defaultMessage="GITLAB" />
-          </Paragraph>
-        </a>
-        <a target="_blank" rel="noopener noreferrer" href={meta.linkedIn}>
-          <Paragraph fontSize={1}>
-            <FormattedHTMLMessage id="footer.linkedIn" defaultMessage="LINKEDIN" />
+          <Paragraph fontSize={1} color={theme.color.black70} style={{ textTransform: 'uppercase' }}>
+            <FormattedMessage id="footer.gitlab" defaultMessage="code on gitlab" />
           </Paragraph>
         </a>
       </FlexBox>

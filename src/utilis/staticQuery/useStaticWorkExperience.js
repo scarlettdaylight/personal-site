@@ -10,12 +10,16 @@ export const useStaticWorkExperience = () => {
         edges {
           node {
             id
+            fields {
+              slug
+            }
             frontmatter {
               type
               company
               period
               jobTitle
               desc
+              companyColor
             }
           }
         }

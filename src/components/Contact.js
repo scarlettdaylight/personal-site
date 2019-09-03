@@ -21,10 +21,10 @@ const Contact = () => {
           <Heading as="h2" textAlign="center" pb={[4, 4, 6]} fontSize={[6, 6, 7]}>
             <FormattedMessage id="contact.title" defaultMessage="Let's work together!" />
           </Heading>
-          <Paragraph textAlign="center" color={theme.color.greyish}>
+          <Paragraph textAlign="center" color={theme.color.greyish} px={5}>
             <FormattedMessage
               id="contact.reach"
-              defaultMessage="Send me an <mail>email</mail> or message me at <l>LinkedIn</l> to chat more :)"
+              defaultMessage="Drop me a message at <l>LinkedIn</l> to chat more :)"
               values={{
                 mail: msg => (
                   <a href={`mailto:${meta.email}`}>
@@ -32,7 +32,7 @@ const Contact = () => {
                   </a>
                 ),
                 l: msg => (
-                  <a target="_blank" rel="noopener noreferrer" href={meta.linkedIn}>
+                  <a target="_blank" rel="noopener noreferrer" href={meta.linkedIn} style={{textTransform: 'uppercase'}}>
                     {msg}
                   </a>
                 ),

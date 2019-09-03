@@ -10,6 +10,9 @@ export const useProjects = () => {
         edges {
           node {
             id
+            fields {
+              slug
+            }
             frontmatter {
               type
               name
@@ -20,14 +23,30 @@ export const useProjects = () => {
               weight
               url
               coverImage {
+                effect
                 coverColor
-                alt
-                image {
-                  publicURL
-                  extension
-                  childImageSharp {
-                    fluid(maxWidth: 2048, quality: 90) {
-                      ...GatsbyImageSharpFluid_noBase64
+                logo {
+                  width
+                  alt
+                  image {
+                    publicURL
+                    extension
+                    childImageSharp {
+                      fluid(maxWidth: 2048, quality: 90) {
+                        ...GatsbyImageSharpFluid_noBase64
+                      }
+                    }
+                  }
+                }
+                imageArr {
+                  alt
+                  image {
+                    publicURL
+                    extension
+                    childImageSharp {
+                      fluid(maxWidth: 2048, quality: 90) {
+                        ...GatsbyImageSharpFluid_noBase64
+                      }
                     }
                   }
                 }
@@ -42,6 +61,7 @@ export const useProjects = () => {
   return allMarkdownRemark.edges.map(edge => (
     {
       id: edge.node.id,
+      slug: edge.node.slug,
       ...edge.node.frontmatter,
     }
   ));

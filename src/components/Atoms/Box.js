@@ -41,20 +41,16 @@ import {
 } from 'styled-system';
 
 const BoxBase = styled.div`
-  ${props => props.cursorPointer
-    && css`
+  ${props => props.cursorPointer && css`
       cursor: pointer;
     `}
-  ${props => props.overflowHidden
-    && css`
+  ${props => props.overflowHidden && css`
       overflow: hidden;
     `}
-  ${props => props.posAb
-    && css`
+  ${props => props.posAbs && css`
       position: absolute;
     `}
-  ${props => props.posRe
-    && css`
+  ${props => props.posRe && css`
       position: relative;
     `}
   ${compose(

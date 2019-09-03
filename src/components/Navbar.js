@@ -1,8 +1,10 @@
-import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import React, { useEffect, useState } from 'react';
+import { FormattedHTMLMessage, FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import Paragraph from './Atoms/Paragraph';
-import Box from './Atoms/Box';
+import { useSiteMetadata } from '../utilis/staticQuery/useSiteMetadata';
+import theme from '../assets/styles/theme';
+import FlexBox from './Atoms/FlexBox';
 
 const StyledNavbar = styled.nav`
   height: 4rem;
@@ -26,32 +28,45 @@ const Logo = styled.div`
   }
 `;
 
-const Navbar = () => (
-  <StyledNavbar className="navbar" role="navigation" aria-label="main navigation">
-    <div className="navbar-brand">
-      <a className="navbar-item" href="/">
-        <Logo>
-        S
-        </Logo>
-      </a>
+const Navbar = () => {
+  const meta = useSiteMetadata();
 
-      <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true" />
-        <span aria-hidden="true" />
-        <span aria-hidden="true" />
-      </a>
-    </div>
+  const [isOpened, setIsOpened] = useState(false);
 
-    <div id="main-navbar" className="navbar-menu">
-      <div className="navbar-end">
-        <a className="navbar-item">
-          <Paragraph pb={0} fontSize={1}>
-            <FormattedMessage id="navbar.contact" defaultMessage="Contact" />
-          </Paragraph>
+  return (
+    <StyledNavbar className="navbar" role="navigation" aria-label="main navigation">
+      <div className="navbar-brand">
+        <a className="navbar-item" href="/">
+          <Logo>
+            S
+          </Logo>
+        </a>
+
+        <a
+          onClick={() => { setIsOpened(!isOpened); }}
+          role="button"
+          className="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="main-navbar"
+        >
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
         </a>
       </div>
-    </div>
-  </StyledNavbar>
-);
+
+      <div id="main-navbar" className={`navbar-menu ${isOpened ? 'is-active' : ''}`}>
+        <div className="navbar-end">
+          <a className="navbar-item" target="_blank" rel="noopener noreferrer" href={meta.linkedIn}>
+            <Paragraph fontSize={1} pb={0}>
+              <FormattedHTMLMessage id="navbar.linkedIn" defaultMessage="LINKEDIN" />
+            </Paragraph>
+          </a>
+        </div>
+      </div>
+    </StyledNavbar>
+  );
+};
 
 export default Navbar;

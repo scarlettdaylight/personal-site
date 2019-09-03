@@ -47,7 +47,7 @@ const Hero = ({
     });
     return () => {
       typed.destroy();
-    }
+    };
   }, []);
 
   return (
@@ -58,10 +58,10 @@ const Hero = ({
             <Heading fontSize={[2, 2, 3]} pb={[1]} as="h1" className="name">
               {name}
             </Heading>
-            <Paragraph fontSize={[1, 1, 2]} color={theme.color.greyish}>
+            <Paragraph fontSize={[2]} color={theme.color.greyish} pb={3}>
               {title}
             </Paragraph>
-            <Paragraph fontSize={[6, 6, 7]} className="headline">
+            <Paragraph fontSize={[6, 6, 7]} className="headline" pb={0}>
               {desc}
             </Paragraph>
             <FlexBox justifyContent="flex-start" className="headline" fontSize={[6, 6, 7]}>
