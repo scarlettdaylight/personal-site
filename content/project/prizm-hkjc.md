@@ -6,11 +6,11 @@ url: ''
 company: prizm
 developmentTime: '~5 months'
 coverImage:
-    coverColor: '#d3f0fa'
+    coverColor: '#004B8F'
     effect: logoCenter
-    imageArr: 
-      - alt: HKJC - 21 days Challenge
-        image: '../../src/assets/images/gatsby-astronaut.png'
+    logo: 
+      alt: HKJC - 21 days Challenge
+      image: '../../src/assets/images/prizm-hkjc/logo.svg'
 desc: >-
   Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
 techStack: ['PHP','JQuery']
