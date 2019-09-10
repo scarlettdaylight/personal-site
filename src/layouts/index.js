@@ -11,6 +11,7 @@ import theme from '../assets/styles/theme';
 
 import { useSiteMetadata } from '../utilis/staticQuery/useSiteMetadata';
 import { LANG_LIST, DEFAULT_LANG } from '../configs/langSetting';
+import { StoreProvider } from '../stores';
 
 const getMessages = locale => require(`../lang/${locale}.json`);
 
@@ -40,25 +41,27 @@ const TemplateWrapper = ({
 
   return (
     <IntlProvider key={lang} locale={lang} messages={messagesList[lang]} initialNow={Date.now()}>
-      <ThemeProvider theme={theme}>
-        <>
-          <Helmet>
-            <html lang={lang} />
-            <title>{title}</title>
-            <meta name="description" content={description} />
-            <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32" />
-            <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16" />
-            <meta name="theme-color" content="#fff" />
-            <meta property="og:type" content="business.business" />
-            <meta property="og:title" content={title} />
-            <meta property="og:url" content="/" />
-            <meta property="og:image" content="/img/og-image.jpg" />
-          </Helmet>
-          <Navbar lang={lang} pathname={purePath} />
-          <div>{children}</div>
-          <Footer />
-        </>
-      </ThemeProvider>
+      <StoreProvider>
+        <ThemeProvider theme={theme}>
+          <>
+            <Helmet>
+              <html lang={lang} />
+              <title>{title}</title>
+              <meta name="description" content={description} />
+              <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32" />
+              <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16" />
+              <meta name="theme-color" content="#fff" />
+              <meta property="og:type" content="business.business" />
+              <meta property="og:title" content={title} />
+              <meta property="og:url" content="/" />
+              <meta property="og:image" content="/img/og-image.jpg" />
+            </Helmet>
+            <Navbar lang={lang} pathname={purePath} />
+            <div>{children}</div>
+            <Footer />
+          </>
+        </ThemeProvider>
+      </StoreProvider>
     </IntlProvider>
   );
 };

@@ -1,0 +1,58 @@
+@media screen and (max-width: 991px) {
+  .navbar {
+    transition: all 100ms cubic-bezier(.17, .67, .83, .67);
+
+    &.is-active {
+      background-color: $red;
+    }
+  }
+  .navbar-brand {
+    margin: -16px;
+    padding: 16px;
+    background-color: $white;
+    border-bottom: 5px solid $red;
+  }
+  .navbar-menu {
+    text-align: right;
+    z-index: -1;
+    transition: all 200ms ease-in;
+    display: block;
+    background-color: $red;
+    margin: 0 -16px;
+    width: 100%;
+    box-shadow: none;
+    top: -50%;
+    position: absolute;
+
+    &.is-active {
+      top: 100%;
+    }
+
+    .navbar-item {
+      padding: 16px;
+      color: $white;
+      position: relative;
+      transition: color 200ms ease-in;
+
+      &:before {
+        z-index: -1;
+        transition: right 200ms ease-in;
+        background-color: $white;
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        right: 100%;
+        top: 0;
+      }
+
+      &:hover {
+        color: $red;
+        &:before {
+          right: 0;
+        }
+      }
+    }
+  }
+}
+

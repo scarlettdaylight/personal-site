@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { FormattedHTMLMessage, FormattedMessage } from 'react-intl';
+import React, { useState } from 'react';
+import { FormattedMessage } from 'react-intl';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Paragraph from './Atoms/Paragraph';
 import { useSiteMetadata } from '../utilis/staticQuery/useSiteMetadata';
-import theme from '../assets/styles/theme';
-import FlexBox from './Atoms/FlexBox';
+import { pageList } from '../utilis/constants';
 
 const StyledNavbar = styled.nav`
-  height: 4rem;
-  margin: 16px;
+  padding: 16px;
+  height: 84px;
   text-transform: uppercase;
 `;
 
@@ -34,7 +34,7 @@ const Navbar = () => {
   const [isOpened, setIsOpened] = useState(false);
 
   return (
-    <StyledNavbar className="navbar" role="navigation" aria-label="main navigation">
+    <StyledNavbar className={`navbar ${isOpened ? 'is-active' : ''}`} role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <a className="navbar-item" href="/">
           <Logo>
@@ -58,9 +58,14 @@ const Navbar = () => {
 
       <div id="main-navbar" className={`navbar-menu ${isOpened ? 'is-active' : ''}`}>
         <div className="navbar-end">
+          <Link className="navbar-item" to={pageList.game.url}>
+            <Paragraph fontSize={1} pb={0}>
+              <FormattedMessage id="navbar.game-list" defaultMessage="Game List" />
+            </Paragraph>
+          </Link>
           <a className="navbar-item" target="_blank" rel="noopener noreferrer" href={meta.linkedIn}>
             <Paragraph fontSize={1} pb={0}>
-              <FormattedHTMLMessage id="navbar.linkedIn" defaultMessage="LINKEDIN" />
+              <FormattedMessage id="navbar.linkedIn" defaultMessage="LINKEDIN" />
             </Paragraph>
           </a>
         </div>
