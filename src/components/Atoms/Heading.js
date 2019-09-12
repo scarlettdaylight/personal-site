@@ -53,14 +53,14 @@ const Heading = ({
   switch (h) {
     case 2:
       return (
-        <AsH2 fontSize={[2]} pb={[3, 3, 4]} uppercase={uppercase} {...props}>
+        <AsH2 fontSize={[4, 4, 4, 5]} pb={[2, 2, 3]} uppercase={uppercase} {...props}>
           {children}
         </AsH2>
       );
     case 3:
       return (
         <AsH3
-          fontSize={[2]}
+          fontSize={[3, 3, 3, 4]}
           pb={[2, 2, 3]}
           uppercase={uppercase}
           {...props}
